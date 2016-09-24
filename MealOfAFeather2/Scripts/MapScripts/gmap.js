@@ -40,12 +40,20 @@ function initialize() {
               // Creating a marker and putting it on the map
               var marker = new google.maps.Marker({
                   position: latLng,
-                  title: data.title
+                  title: data.title,
+                  map: map
               });
               marker.setMap(map);
+
+              marker.addListener('click', function () {
+                  showInformationForLocation();
+              });
           });
       }
   });
   
-    
+}
+
+function showInformationForLocation() {
+    console.log("showInformationForLocation");
 }

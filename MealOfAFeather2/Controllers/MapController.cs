@@ -44,7 +44,7 @@ namespace MealOfAFeather2.Controllers
             {
                 title = "My title 1",
                 lat = "46.5040851",
-                lng = "-92.6279098",
+                lng = "-81.6279098",
                 description = "This is marker #1"
             });
             mapMarkers.Add(new MapInstitutionMarkerModel
