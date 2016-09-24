@@ -36,3 +36,223 @@
     </div>
 </div>
 
+
+
+
+
+
+
+------------------------------------ New Stuff
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet" type="text/css">
+    <!-- <script type="text/javascript" src="@Url.Content("~/Scripts/MapScripts/gmap.js")"></script> -->
+    <script type="text/javascript" src="gmap.js"></script>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACj6RUncRFQjEliRV1T2Woo5STTqO2gRs&callback=initialize"></script> 
+    </head>
+    <body>
+    <style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-image: url('seigaiha.png');
+    }
+    .themeBGColor { 
+        background-color: #1b5733 !important;
+    }
+    #logo {
+            background-image: url("http://www.chicagosfoodbank.org/_res/img/mobile/logo.png");
+            background-position: center;
+            background-size: cover;
+            left: 1em;
+            height: 6em;
+            width: 4.5em;
+            border-right: 4px solid #fff;
+            border-bottom: 3px solid #fff;
+            border-left: 4px solid #fff;
+        position: absolute;
+        top: 0;
+        left: 10px;
+    }
+    .app .header {
+        # background: rgba(99, 224, 104, 0.3);
+        height: 120px;
+    }
+    .app .header .topBar {
+        width: 100%;
+        height: 32px;
+        background: rgba(0,0,0,.7)
+    }
+    .app .header .mainTitle {
+        margin-top: 24px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .app .content {
+    }
+    .app .fnt1 {
+        font-family: 'Lato', sans-serif; 
+    }
+    .app .container {
+        background: white;
+    }
+    .app  table {
+        width: 100%;
+    }
+    .app table th {
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+    }
+    .app  table td {
+        font-size: 32px;
+            text-align: center;
+        border-right: 1px #e4e4e4 dotted;
+    }
+    .app  table tr td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background: white;
+    }   
+     .app  table th.c1 { background: #8acbff }  
+     .app  table th.c2 { background: #f5b9ff }  
+     .app  table th.c3 { background: #9ed8a1 }  
+     .app  table th.c4 { background: #bbbbbb }  
+     .app  table th.c5 { background: #ffdcb1 }
+     .app  table th.c6 { background: #c0ffee }
+    .app table td.schoolName {
+        width: 400px;
+        font-size: 18px;
+        text-align: left;
+        padding-left: 16px;
+    }   
+    </style>
+    <div class="app animated fadeIn">
+    <div class="header">
+        <div class="topBar"></div>
+        <div id="logo">
+            <a href="http://www.chicagosfoodbank.org"></a>
+        </div>
+        <div class="mainTitle fnt1">Meals of a Feather</div>
+    </div>
+    <div class="content">
+        <div class="row" id="map-wrapper">
+                <div class="col-sm-12">
+                    <div id="map_canvas" style="height:400px;"></div>
+                </div>
+        </div>
+    </div>
+
+    <div class="row" id="extra-info-wrapper">
+        <table id="extra-info-1" class="fnt1 animated fadeIn" cellspacing="0">
+            <tr>
+                <th class="c1">School Name</th>
+                <th class="c2">Correllation Score</th>
+                <th class="c3">Percent Eligible</th>
+                <th class="c4">Percent Participation</th>
+                <th class="c5">Avgerage Income</th>
+                <th class="c6">Dominant Ehtnicity</th>
+            </tr>
+            <tr>
+                <td class="schoolName">West East</td>
+                <td>34.2</td>
+                <td>83.4%</td>
+                <td>10.2%</td>
+                <td>7.2</td>
+                <td>317.22</td>
+            </tr>
+        </table>
+        <table id="extra-info-2" class="fnt1 animated fadeIn" cellspacing="0">
+            <tr>
+                <th class="c1">School Name</th>
+                <th class="c2">Correllation Score</th>
+                <th class="c3">Percent Eligible</th>
+                <th class="c4">Percent Participation</th>
+                <th class="c5">Avgerage Income</th>
+                <th class="c6">Dominant Ehtnicity</th>
+            </tr>
+            <tr>
+                <td class="schoolName">Bayside high</td>
+                <td>34.2</td>
+                <td>83.4%</td>
+                <td>10.2%</td>
+                <td>7.2</td>
+                <td>317.22</td>
+            </tr>
+        </table>
+        <table id="extra-info-3" class="fnt1 animated fadeIn" cellspacing="0">
+            <tr>
+                <th class="c1">School Name</th>
+                <th class="c2">Correllation Score</th>
+                <th class="c3">Percent Eligible</th>
+                <th class="c4">Percent Participation</th>
+                <th class="c5">Avgerage Income</th>
+                <th class="c6">Dominant Ehtnicity</th>
+            </tr>
+            <tr>
+                <td class="schoolName">Beverly Hills High School</td>
+                <td>34.2</td>
+                <td>83.4%</td>
+                <td>10.2%</td>
+                <td>7.2</td>
+                <td>317.22</td>
+            </tr>
+        </table>
+        <table id="extra-info-4" class="fnt1 animated fadeIn" cellspacing="0">
+            <tr>
+                <th class="c1">School Name</th>
+                <th class="c2">Correllation Score</th>
+                <th class="c3">Percent Eligible</th>
+                <th class="c4">Percent Participation</th>
+                <th class="c5">Avgerage Income</th>
+                <th class="c6">Dominant Ehtnicity</th>
+            </tr>
+            <tr>
+                <td class="schoolName">Bel Air High</td>
+                <td>34.2</td>
+                <td>83.4%</td>
+                <td>10.2%</td>
+                <td>7.2</td>
+                <td>317.22</td>
+            </tr>
+        </table>
+        <table id="extra-info-5" class="fnt1 animated fadeIn" cellspacing="0">
+            <tr>
+                <th class="c1">School Name</th>
+                <th class="c2">Correllation Score</th>
+                <th class="c3">Percent Eligible</th>
+                <th class="c4">Percent Participation</th>
+                <th class="c5">Avgerage Income</th>
+                <th class="c6">Dominant Ehtnicity</th>
+            </tr>
+            <tr>
+                <td class="schoolName">Glenbrook North High School</td>
+                <td>34.2</td>
+                <td>83.4%</td>
+                <td>10.2%</td>
+                <td>7.2</td>
+                <td>317.22</td>
+            </tr>
+        </table>                
+    </div>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
