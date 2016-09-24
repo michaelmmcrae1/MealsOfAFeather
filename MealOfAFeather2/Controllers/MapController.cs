@@ -43,16 +43,16 @@ namespace MealOfAFeather2.Controllers
             mapMarkers.Add(new MapInstitutionMarkerModel
             {
                 title = "My title 1",
-                lat = "123.9429",
-                lng = "180.9441",
+                lat = "87.6298",
+                lng = "41.8781",
                 description = "This is marker #1"
             });
-
+            // 41.8781° N, 87.6298° W
             mapMarkers.Add(new MapInstitutionMarkerModel
             {
                 title = "My title 2",
-                lat = "125.9429",
-                lng = "183.9441",
+                lat = "41.8781",
+                lng = "87.6298",
                 description = "This is marker #2"
             });
 

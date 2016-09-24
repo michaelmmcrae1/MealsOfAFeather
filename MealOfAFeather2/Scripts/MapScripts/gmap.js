@@ -13,7 +13,7 @@ function initialize() {
     styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
   };
   var markers = [];
-  var map = new google.maps.Map(document.getElementById("map"), myOptions);
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
   var neighborhoodsLayerP1 = new google.maps.KmlLayer({
     url: 'http://chicagomap.zolk.com/sources/neighborhoods/source_p1.kml',
@@ -30,7 +30,7 @@ function initialize() {
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
+  console.log("var search");
   var searchBox = new google.maps.places.SearchBox(
     /** @type {HTMLInputElement} */(input));
 
@@ -83,5 +83,23 @@ function initialize() {
   google.maps.event.addListener(map, 'bounds_changed', function() {
     var bounds = map.getBounds();
     searchBox.setBounds(bounds);
+  });
+
+  // Go grab some markers
+  $.ajax({
+      url: "/Map/GetMapMarkersJSON/",
+      type: "GET",
+      success: function (result) {
+          console.log(result);
+          $.each(result.markers, function (key, data) {
+              var latLng = new google.maps.LatLng(data.lat, data.lng);
+              // Creating a marker and putting it on the map
+              var marker = new google.maps.Marker({
+                  position: latLng,
+                  title: data.title
+              });
+              marker.setMap(map);
+          });
+      }
   });
 }

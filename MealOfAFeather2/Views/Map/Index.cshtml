@@ -2,40 +2,15 @@
 @{
     ViewBag.Title = "Meals of a Feather Map";
 }
-<script type="text/javascript" src="@Url.Content("~/Scripts/MapScripts/SetupMap.js")"></script>
-<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet" type="text/css"> 
-<link href="http://chicagomap.zolk.com/javascripts/gmap.js">
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyACj6RUncRFQjEliRV1T2Woo5STTqO2gRs&libraries=places"></script>
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet" type="text/css">
 
+<script type="text/javascript" src="@Url.Content("~/Scripts/MapScripts/gmap.js")"></script>
 
-<script type="text/javascript">
-      var map;
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(58, 16),
-          zoom: 7,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-      }
-      <script>
-<script type ="text/javascript">
-$(document).ready(function() {
-        $.getJSON("foo.txt", function(json1) {
-          $.each(json1, function(key, data) {
-            var latLng = new google.maps.LatLng(data.lat, data.lng); 
-            // Creating a marker and putting it on the map
-            var marker = new google.maps.Marker({
-                position: latLng,
-                title: data.title
-            });
-            marker.setMap(map);
-          });
-        });
-      });
-<script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACj6RUncRFQjEliRV1T2Woo5STTqO2gRs&callback=initialize">
+</script>
+
 
 <div class="page-header">
     <h1>Area Map</h1>
@@ -51,7 +26,7 @@ $(document).ready(function() {
 
 <div class="row" id="map-wrapper">
     <div class="col-sm-12">
-       <div id="map_canvas" style="width:100%; height:100%"></div>
+       <div id="map_canvas" style="height:400px;"></div>
     </div>
 </div>
 
@@ -60,3 +35,4 @@ $(document).ready(function() {
         Extra information about the selected institutions.
     </div>
 </div>
+
