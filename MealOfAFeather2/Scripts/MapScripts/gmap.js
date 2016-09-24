@@ -59,15 +59,17 @@ function showInformationForLocation(marker) {
     var titleOfClickedMarker = marker.getTitle();
     console.log("You clicked " + titleOfClickedMarker);
 
-    $('#extra-info-wrapper').find("div.container").addClass("hidden")
-    if (titleOfClickedMarker.contains("1")) {
-        $("div#extra-info-1").removeClass("hidden");
-    } else if (titleOfClickedMarker.contains("2")) {
-        $("div#extra-info-2").removeClass("hidden");
-    } else if (titleOfClickedMarker.contains("3")) {
-        $("div#extra-info-3").removeClass("hidden");
-    } else { // 4
-        $("div#extra-info-4").removeClass("hidden");
+    $('#extra-info-wrapper').find("table").addClass("hidden")
+    if (titleOfClickedMarker.includes("1")) {
+        $("table#extra-info-1").removeClass("hidden");
+    } else if (titleOfClickedMarker.includes("2")) {
+        $("table#extra-info-2").removeClass("hidden");
+    } else if (titleOfClickedMarker.includes("3")) {
+        $("table#extra-info-3").removeClass("hidden");
+    } else if (titleOfClickedMarker.includes("4")) {
+        $("table#extra-info-4").removeClass("hidden");
+    } else { // 5
+        $("table#extra-info-5").removeClass("hidden");
     }
 
 }

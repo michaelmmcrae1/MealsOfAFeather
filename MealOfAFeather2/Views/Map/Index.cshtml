@@ -4,70 +4,20 @@
 }
 
 <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet" type="text/css">
-
+<link href="@Url.Content("~/Content/animate.css")" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="@Url.Content("~/Scripts/MapScripts/gmap.js")"></script>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACj6RUncRFQjEliRV1T2Woo5STTqO2gRs&callback=initialize">
 </script>
 
-
-<div class="page-header">
-    <h1>Area Map</h1>
-</div>
-
-<div class="row">
-    <div class="col-sm-12">
-        <label>Search parameter<input type="text" /></label>
-    </div>
-</div>
-
-<hr />
-
-<div class="row" id="map-wrapper">
-    <div class="col-sm-12">
-       <div id="map_canvas" style="height:400px;"></div>
-    </div>
-</div>
-
-<div class="row hidden" id="extra-info-wrapper" style="margin-top: 20px;">
-    <div class="col-sm-12">
-        Extra information about the selected institutions.
-    </div>
-</div>
-
-
-
-
-
-
-
------------------------------------- New Stuff
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900" rel="stylesheet">
-    <link href="animate.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet" type="text/css">
-    <!-- <script type="text/javascript" src="@Url.Content("~/Scripts/MapScripts/gmap.js")"></script> -->
-    <script type="text/javascript" src="gmap.js"></script>
-    <script type="text/javascript" src="jquery-3.1.1.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACj6RUncRFQjEliRV1T2Woo5STTqO2gRs&callback=initialize"></script> 
-    </head>
-    <body>
-    <style>
+<style type="text/css">
     body {
         padding: 0;
         margin: 0;
         background-image: url('seigaiha.png');
     }
-    .themeBGColor { 
+    .themeBGColor {
         background-color: #1b5733 !important;
     }
     #logo {
@@ -137,9 +87,10 @@
         font-size: 18px;
         text-align: left;
         padding-left: 16px;
-    }   
-    </style>
-    <div class="app animated fadeIn">
+    }
+</style>
+
+<div class="app animated fadeIn">
     <div class="header">
         <div class="topBar"></div>
         <div id="logo">
@@ -149,14 +100,14 @@
     </div>
     <div class="content">
         <div class="row" id="map-wrapper">
-                <div class="col-sm-12">
-                    <div id="map_canvas" style="height:400px;"></div>
-                </div>
+            <div class="col-sm-12">
+                <div id="map_canvas" style="height:400px;"></div>
+            </div>
         </div>
     </div>
 
     <div class="row" id="extra-info-wrapper">
-        <table id="extra-info-1" class="fnt1 animated fadeIn" cellspacing="0">
+        <table id="extra-info-1" class="fnt1 animated fadeIn hidden" cellspacing="0">
             <tr>
                 <th class="c1">School Name</th>
                 <th class="c2">Correllation Score</th>
@@ -167,14 +118,14 @@
             </tr>
             <tr>
                 <td class="schoolName">West East</td>
-                <td>34.2</td>
-                <td>83.4%</td>
+                <td>40</td>
+                <td>31.4%</td>
                 <td>10.2%</td>
-                <td>7.2</td>
-                <td>317.22</td>
+                <td>$30,000</td>
+                <td>Pacific Islander</td>
             </tr>
         </table>
-        <table id="extra-info-2" class="fnt1 animated fadeIn" cellspacing="0">
+        <table id="extra-info-2" class="fnt1 animated fadeIn hidden" cellspacing="0">
             <tr>
                 <th class="c1">School Name</th>
                 <th class="c2">Correllation Score</th>
@@ -185,14 +136,14 @@
             </tr>
             <tr>
                 <td class="schoolName">Bayside high</td>
-                <td>34.2</td>
-                <td>83.4%</td>
-                <td>10.2%</td>
-                <td>7.2</td>
-                <td>317.22</td>
+                <td>67.2</td>
+                <td>93.4%</td>
+                <td>88.2%</td>
+                <td>$31,000</td>
+                <td>Black/African American</td>
             </tr>
         </table>
-        <table id="extra-info-3" class="fnt1 animated fadeIn" cellspacing="0">
+        <table id="extra-info-3" class="fnt1 animated fadeIn hidden" cellspacing="0">
             <tr>
                 <th class="c1">School Name</th>
                 <th class="c2">Correllation Score</th>
@@ -203,14 +154,14 @@
             </tr>
             <tr>
                 <td class="schoolName">Beverly Hills High School</td>
-                <td>34.2</td>
-                <td>83.4%</td>
-                <td>10.2%</td>
-                <td>7.2</td>
-                <td>317.22</td>
+                <td>14.7</td>
+                <td>71.4%</td>
+                <td>12.2%</td>
+                <td>$23,000</td>
+                <td>Hispanic</td>
             </tr>
         </table>
-        <table id="extra-info-4" class="fnt1 animated fadeIn" cellspacing="0">
+        <table id="extra-info-4" class="fnt1 animated fadeIn hidden" cellspacing="0">
             <tr>
                 <th class="c1">School Name</th>
                 <th class="c2">Correllation Score</th>
@@ -221,14 +172,14 @@
             </tr>
             <tr>
                 <td class="schoolName">Bel Air High</td>
-                <td>34.2</td>
+                <td>78.2</td>
                 <td>83.4%</td>
-                <td>10.2%</td>
-                <td>7.2</td>
-                <td>317.22</td>
+                <td>47.2%</td>
+                <td>$24,000</td>
+                <td>White</td>
             </tr>
         </table>
-        <table id="extra-info-5" class="fnt1 animated fadeIn" cellspacing="0">
+        <table id="extra-info-5" class="fnt1 animated fadeIn hidden" cellspacing="0">
             <tr>
                 <th class="c1">School Name</th>
                 <th class="c2">Correllation Score</th>
@@ -239,20 +190,16 @@
             </tr>
             <tr>
                 <td class="schoolName">Glenbrook North High School</td>
-                <td>34.2</td>
-                <td>83.4%</td>
-                <td>10.2%</td>
-                <td>7.2</td>
-                <td>317.22</td>
+                <td>57.2</td>
+                <td>54.4%</td>
+                <td>20.9%</td>
+                <td>$37,000</td>
+                <td>Native American</td>
             </tr>
-        </table>                
+        </table>
     </div>
+</div>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    </body>
-</html>
+
+
+
