@@ -56,7 +56,7 @@ namespace MealOfAFeather2.Controllers
                 description = "This is marker #2"
             });
 
-            return Json(new { markers = mapMarkers });
+            return Json(new { markers = mapMarkers }, JsonRequestBehavior.AllowGet);
         }
     }
 }

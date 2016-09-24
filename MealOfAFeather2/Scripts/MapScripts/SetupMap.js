@@ -4,9 +4,10 @@
 
     // Go grab some markers
     $.ajax({
-        url: "/Map/GetMarkerJSON/",
+        url: "/Map/GetMapMarkersJSON/",
         type: "GET",
         success: function (result) {
+            console.log(result);
             $('#map-wrapper').html(result);
 
         }
