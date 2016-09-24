@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MealOfAFeather2.Controllers.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,12 @@ namespace MealOfAFeather2.Controllers
 {
     public class MapController : Controller
     {
+        private MapService _mapService;
+        public MapController()
+        {
+            _mapService = new MapService();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -25,6 +32,11 @@ namespace MealOfAFeather2.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult GetMapJSON()
+        {
+            return Json(new { isSuccess = true });
         }
     }
 }
