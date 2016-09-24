@@ -33,5 +33,10 @@ namespace MealOfAFeather2.Controllers
 
             return View();
         }
+
+        public ActionResult GetMapJSON()
+        {
+            return Json(new { isSuccess = true });
+        }
     }
 }
