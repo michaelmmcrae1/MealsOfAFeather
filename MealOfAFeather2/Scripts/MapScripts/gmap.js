@@ -30,12 +30,33 @@ function initialize() {
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  console.log("var search");
-  var searchBox = new google.maps.places.SearchBox(
-    /** @type {HTMLInputElement} */(input));
+
+    
+    // Go grab some markers
+  $.ajax({
+      url: "/Map/GetMapMarkersJSON/",
+      type: "GET",
+      success: function (result) {
+          console.log(result);
+          $.each(result.markers, function (key, data) {
+              var latLng = new google.maps.LatLng(data.lat, data.lng);
+              // Creating a marker and putting it on the map
+              var marker = new google.maps.Marker({
+                  position: latLng,
+                  title: data.title
+              });
+              marker.setMap(map);
+          });
+      }
+  });
+  
+    
+  //var searchBox = new google.maps.places.SearchBox(
+    ///** @type {HTMLInputElement} */(input));
 
   // Listen for the event fired when the user selects an item from the
-  // pick list. Retrieve the matching places for that item.
+    // pick list. Retrieve the matching places for that item.
+    /*
   google.maps.event.addListener(searchBox, 'places_changed', function() {
     var places = searchBox.getPlaces();
 
@@ -82,24 +103,7 @@ function initialize() {
   // current map's viewport.
   google.maps.event.addListener(map, 'bounds_changed', function() {
     var bounds = map.getBounds();
-    searchBox.setBounds(bounds);
+    //searchBox.setBounds(bounds);
   });
-
-  // Go grab some markers
-  $.ajax({
-      url: "/Map/GetMapMarkersJSON/",
-      type: "GET",
-      success: function (result) {
-          console.log(result);
-          $.each(result.markers, function (key, data) {
-              var latLng = new google.maps.LatLng(data.lat, data.lng);
-              // Creating a marker and putting it on the map
-              var marker = new google.maps.Marker({
-                  position: latLng,
-                  title: data.title
-              });
-              marker.setMap(map);
-          });
-      }
-  });
+  */
 }
