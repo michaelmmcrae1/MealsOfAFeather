@@ -1,4 +1,5 @@
 ﻿using MealOfAFeather2.Controllers.Services;
+using MealOfAFeather2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,28 @@ namespace MealOfAFeather2.Controllers
             return View();
         }
 
-        public ActionResult GetMapJSON()
+        public ActionResult GetMapMarkersJSON()
         {
-            return Json(new { isSuccess = true });
+            List<MapInstitutionMarkerModel> mapMarkers = new List<MapInstitutionMarkerModel>();
+
+            // Prototype/mock data
+            mapMarkers.Add(new MapInstitutionMarkerModel
+            {
+                title = "My title 1",
+                lat = "123.9429",
+                lng = "180.9441",
+                description = "This is marker #1"
+            });
+
+            mapMarkers.Add(new MapInstitutionMarkerModel
+            {
+                title = "My title 2",
+                lat = "125.9429",
+                lng = "183.9441",
+                description = "This is marker #2"
+            });
+
+            return Json(new { markers = mapMarkers }, JsonRequestBehavior.AllowGet);
         }
     }
 }
