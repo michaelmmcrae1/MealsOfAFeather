@@ -46,7 +46,7 @@ function initialize() {
               marker.setMap(map);
 
               marker.addListener('click', function () {
-                  showInformationForLocation();
+                  showInformationForLocation(marker);
               });
           });
       }
@@ -54,6 +54,20 @@ function initialize() {
   
 }
 
-function showInformationForLocation() {
-    console.log("showInformationForLocation");
+// Handle event for when a marker was clicked
+function showInformationForLocation(marker) {
+    var titleOfClickedMarker = marker.getTitle();
+    console.log("You clicked " + titleOfClickedMarker);
+
+    $('#extra-info-wrapper').find("div.container").addClass("hidden")
+    if (titleOfClickedMarker.contains("1")) {
+        $("div#extra-info-1").removeClass("hidden");
+    } else if (titleOfClickedMarker.contains("2")) {
+        $("div#extra-info-2").removeClass("hidden");
+    } else if (titleOfClickedMarker.contains("3")) {
+        $("div#extra-info-3").removeClass("hidden");
+    } else { // 4
+        $("div#extra-info-4").removeClass("hidden");
+    }
+
 }

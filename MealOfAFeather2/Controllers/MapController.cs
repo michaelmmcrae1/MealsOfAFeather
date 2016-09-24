@@ -42,24 +42,38 @@ namespace MealOfAFeather2.Controllers
             // Prototype/mock data
             mapMarkers.Add(new MapInstitutionMarkerModel
             {
-                title = "My title 1",
-                lat = "46.5040851",
-                lng = "-81.6279098",
+                title = "1",
+                lat = "41.8540900",
+                lng = "-87.6279000",
                 description = "This is marker #1"
             });
             mapMarkers.Add(new MapInstitutionMarkerModel
             {
-                title = "My title 2",
-                lat = "41.85664",
+                title = "2",
+                lat = "41.856642",
                 lng = "-87.734361",
                 description = "This is marker #2"
             });
             mapMarkers.Add(new MapInstitutionMarkerModel
             {
-                title = "My title 3",
-                lat = "37.85664",
-                lng = "-84.734361",
+                title = "3",
+                lat = "41.8566788",
+                lng = "-87.739990",
                 description = "This is marker #3"
+            });
+            mapMarkers.Add(new MapInstitutionMarkerModel
+            {
+                title = "4",
+                lat = "41.8960000",
+                lng = "-87.749800",
+                description = "This is marker #4"
+            });
+            mapMarkers.Add(new MapInstitutionMarkerModel
+            {
+                title = "5",
+                lat = "41.9069000",
+                lng = "-87.738000",
+                description = "This is marker #5"
             });
 
             return Json(new { markers = mapMarkers }, JsonRequestBehavior.AllowGet);
